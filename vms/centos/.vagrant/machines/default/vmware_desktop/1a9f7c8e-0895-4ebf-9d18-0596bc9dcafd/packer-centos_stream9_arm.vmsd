@@ -1,0 +1,5 @@
+.encoding = "UTF-8"
+cloneOf0 = "/Users/alfiechen/.vagrant.d/boxes/bandit145-VAGRANTSLASH-centos_stream9_arm/20240905183502/vmware_desktop/packer-centos_stream9_arm.vmx"
+numCloneOf = "1"
+sentinel0 = "disk-cl1.vmdk"
+numSentinels = "1"

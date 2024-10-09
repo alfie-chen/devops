@@ -1,0 +1,27 @@
+# Disk DescriptorFile
+version=1
+encoding="UTF-8"
+CID=3c3fa8ac
+parentCID=6da5a2da
+createType="twoGbMaxExtentSparse"
+parentFileNameHint="/Users/alfiechen/.vagrant.d/boxes/bandit145-VAGRANTSLASH-centos_stream9_arm/20240905183502/vmware_desktop/disk.vmdk"
+# Extent description
+RW 8323072 SPARSE "disk-cl1-s001.vmdk"
+RW 8323072 SPARSE "disk-cl1-s002.vmdk"
+RW 8323072 SPARSE "disk-cl1-s003.vmdk"
+RW 8323072 SPARSE "disk-cl1-s004.vmdk"
+RW 8323072 SPARSE "disk-cl1-s005.vmdk"
+RW 8323072 SPARSE "disk-cl1-s006.vmdk"
+RW 8323072 SPARSE "disk-cl1-s007.vmdk"
+RW 8323072 SPARSE "disk-cl1-s008.vmdk"
+RW 8323072 SPARSE "disk-cl1-s009.vmdk"
+RW 8323072 SPARSE "disk-cl1-s010.vmdk"
+RW 737280 SPARSE "disk-cl1-s011.vmdk"
+
+# The Disk Data Base 
+#DDB
+
+ddb.fcd.uuid = "00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00"
+ddb.longContentID = "b08aa9ee5d317f2e024787ed3c3fa8ac"
+ddb.toolsInstallType = "4"
+ddb.toolsVersion = "12416"
