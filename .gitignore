@@ -2,3 +2,4 @@
 vms/centos/.vagrant/
 vms/ubuntu/.vagrant/
 vms/finance/.vagrant/
+.DS_Store
