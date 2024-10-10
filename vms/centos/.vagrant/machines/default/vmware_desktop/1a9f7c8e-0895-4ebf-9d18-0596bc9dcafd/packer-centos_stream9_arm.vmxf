@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<Foundry>
-<VM>
-<ClientMetaData>
-<clientMetaDataAttributes/>
-<HistoryEventList/></ClientMetaData>
-<VMId type="string">52 e5 fb ec c0 5d 96 47-cb 6a df e5 e3 10 d0 48</VMId>
-<vmxPathName type="string">packer-centos_stream9_arm.vmx</vmxPathName></VM></Foundry>

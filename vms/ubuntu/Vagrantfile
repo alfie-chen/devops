@@ -5,7 +5,7 @@ config.vm.network "private_network", ip: "192.168.56.11"
 config.vm.network "public_network"
 config.vm.provision "shell", inline: <<-SHELL
    apt-get update
-   apt-get install -y apache2 net-tools
+   apt-get install -y vim tmux apache2 net-tools
 SHELL
 config.vm.provider "vmware_desktop" do |vmware|
   vmware.gui = true
