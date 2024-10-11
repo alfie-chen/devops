@@ -1,0 +1,47 @@
+sudo apt update
+sudo apt install apache2 \
+                 ghostscript \
+                 libapache2-mod-php \
+                 mysql-server \
+                 php \
+                 php-bcmath \
+                 php-curl \
+                 php-imagick \
+                 php-intl \
+                 php-json \
+                 php-mbstring \
+                 php-mysql \
+                 php-xml \
+                 php-zip \
+                 -y
+
+sudo mkdir -p /srv/www
+sudo chown www-data: /srv/www
+curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
+
+sudo a2ensite wordpress
+sudo a2enmod rewrite
+sudo a2dissite 000-default
+
+sudo mysql -u root
+CREATE DATABASE wordpress;
+CREATE USER wordpress@localhost IDENTIFIED BY 'admin';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wordpress.* TO wordpress@localhost;
+FLUSH PRIVILEGES;
+
+sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
+sudo -u www-data sed -i 's/password_here/admin/' /srv/www/wordpress/wp-config.php
+
+
+sudo -u www-data vim /srv/www/wordpress/wp-config.php
+
+define('AUTH_KEY',         'b| r;N_|>Wk|CoeSvs4bOjY5|SahL]4EV5htTB5ieON-yzkePWm,>X#-<0G-(b&L');
+define('SECURE_AUTH_KEY',  '`0YHKH#/!kuWa^h,GJLMsA `KtPsxJxXO>>Lp-2PE<EL%0U3DUKSJ]lYCIMrFx:%');
+define('LOGGED_IN_KEY',    'if~.hi-S:uw7kK]-Q|1J7p<,slpB|$jr+)x!itCI}Mye(1TF5IL-%ETS^;NXDvKM');
+define('NONCE_KEY',        ',OvC/,2+rUNxF[/mkcx=GV4nYlJv?G/%le0G$qk$QHg>.z-*:(#VI1d-<$)-vuN8');
+define('AUTH_SALT',        'tc;ie$TT}U-}?PxI~,-@^~seET+vh5okkwb*1@41JWa$`w3_@-k@J8:s.4;g =%c');
+define('SECURE_AUTH_SALT', 'be?f*+);J?zu7}^T`?_5=/+-L1.]Njo!oQ7cI2 PK%}p9ZMdnm&*SJdOE#X_II)N');
+define('LOGGED_IN_SALT',   'iHDIwqWWGShqt@I^`3:(^/!xS>@Wf;4T_I>TT0w9e#AlqMehmGN=5f&J.F|1kL[j');
+define('NONCE_SALT',       'FZRS|&!}imUn&^5 Y%y41,[sQWHN->EcF;Az5;FhA(ibCO?|<$]%BwF))F2@fQo}');
